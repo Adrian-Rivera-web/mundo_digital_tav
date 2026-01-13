@@ -69,6 +69,36 @@ function cambiarCantidad(index, cambio) {
 
 // Ejecutar al cargar la página
 renderCarrito();
+
 document.getElementById("seguir-comprando").addEventListener("click", () => {
     window.location.href = "../page/producto.html";
+});
+
+
+document.getElementById("checkout").addEventListener("click", () => {
+
+    // obtener carrito actual
+    const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+    // calcular total
+    let total = carrito.reduce((acc, item) => {
+        return acc + (item.precio * item.cantidad);
+    }, 0);
+
+    // guardar datos de la boleta
+    const boleta = {
+        fecha: new Date().toLocaleString(),
+        productos: carrito,
+        total: total
+    };
+
+    localStorage.setItem("boleta", JSON.stringify(boleta));
+
+    // borrar carrito
+    localStorage.removeItem("carrito");
+    localStorage.removeItem("total");
+    localStorage.removeItem("cantidad");
+
+    // ir a la boleta
+    window.location.href = "../page/boleta.html";
 });

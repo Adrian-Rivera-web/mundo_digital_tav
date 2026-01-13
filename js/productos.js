@@ -2,7 +2,7 @@ const productos = [
   {
     id: 1,
     nombre: "Notebook Gamer",
-    precio: 79990,
+    precio: 79999000,
     imagen: "producto1.jpg",
     descripcion: "Notebook de alto rendimiento ideal para juegos y trabajo pesado.",
     categoria: "Computación",
@@ -103,7 +103,7 @@ const categorias = [
   },
 ];
 
-/**esto es para el categoria*/
+/*esto es para el categoria/
 const contenedorCategorias = document.getElementById("contenedor-categorias");
 
 if (contenedorCategorias) {
@@ -123,7 +123,7 @@ if (contenedorCategorias) {
 
 
 
-/*esto es del index para los mas vendidos adrian* */
+/esto es del index para los mas vendidos adrian */
 /* MÁS VENDIDOS (INDEX) */
 const masVendidos = productos
   .filter(p => p.vendidos && p.vendidos > 0)
@@ -242,4 +242,3 @@ if (contenedorOferta && productoOferta) {
     </div>
   `;
 }
-

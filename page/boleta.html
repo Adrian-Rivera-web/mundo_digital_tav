@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Boleta de compra</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <section class="boleta">
+        <h1>🧾 Boleta de compra</h1>
+
+        <p><strong>Estado:</strong> Compra realizada con éxito</p>
+        <p><strong>Fecha:</strong> <span id="fecha"></span></p>
+
+        <hr>
+
+        <div id="lista-productos"></div>
+
+        <h3>Total pagado: $<span id="total"></span></h3>
+
+        <a href="../index.html" class="btn-volver">
+        Volver al inicio
+        </a>
+    </section>
+
+
+<script>
+    // Recuperamos los datos guardados
+    const boleta = JSON.parse(localStorage.getItem("boleta"));
+
+    if (boleta) {
+        document.getElementById("fecha").textContent = boleta.fecha;
+        document.getElementById("total").textContent = boleta.total.toLocaleString();
+
+        const lista = document.getElementById("lista-productos");
+
+        boleta.productos.forEach(prod => {
+            const p = document.createElement("p");
+            
+            // CORRECCIÓN AQUÍ: Agregué las comillas ` ` al inicio y al final
+            p.textContent = `${prod.nombre} x${prod.cantidad} - $${(prod.precio * prod.cantidad).toLocaleString()}`;
+            
+            lista.appendChild(p);
+        });
+        
+        // (Opcional) Limpiar el carrito después de mostrar la boleta
+        // localStorage.removeItem("carrito"); 
+        
+    } else {
+        // Esto sirve por si alguien entra directo al link sin comprar
+        document.querySelector(".boleta").innerHTML = "<h3>No hay ninguna compra registrada.</h3><a href='../index.html'>Volver</a>";
+    }
+</script>
+
+
+</body>
+</html>
