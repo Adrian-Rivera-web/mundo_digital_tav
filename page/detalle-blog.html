@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reseñas de Productos - Mundo Digital</title>
+    <title>Reseña - Mundo Digital</title>
     
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/blog.css">
+    <link rel="stylesheet" href="../css/reseña.css"> 
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    
+
     <header>
         <div class="header-arriba">
             <img src="../img/logo.jpg" alt="logo de tienda" class="logo">
@@ -21,13 +22,13 @@
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
             </form>
-            <a href="../page/login.html" class="usuario-izquierda">
+            <a href="login.html" class="usuario-izquierda">
                 <i class="fa-regular fa-circle-user"></i> <div class="usuario-texto">
                     <span class="hola">¡Hola!</span>
                     <span class="inicia">Inicia sesión</span>
                 </div>
             </a>
-            <a href="../page/carrito.html" class="icono-carrito">
+            <a href="carrito.html" class="icono-carrito">
                 <i class="fa-solid fa-basket-shopping"></i>
             </a>
         </div>
@@ -35,64 +36,41 @@
             <nav>
                 <ul>
                     <li><a href="../index.html">Inicio</a></li>
-                    <li><a href="../page/producto.html">Productos</a></li>
-                    <li><a href="../page/ofertas.html">Ofertas</a></li>
-                    <li><a href="../page/nosotros.html">Nosotros</a></li>
-                    <li><a href="../page/contacto.html">Contacto</a></li>
-                    <li><a href="../page/blog.html">Reseñas</a></li>
+                    <li><a href="producto.html">Productos</a></li>
+                    <li><a href="ofertas.html">Ofertas</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="blog.html">Reseñas</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main class="blog-seccion">
-        <div class="blog-header">
-            <h1>Nuestras Reseñas</h1>
-            <p>Análisis a fondo de lo último en tecnología para ayudarte a decidir.</p>
+    <main class="articulo-container">
+        <div class="breadcrumbs">
+            <a href="blog.html"><i class="fa-solid fa-arrow-left"></i> Volver a Reseñas</a>
         </div>
 
-        <div class="blog-grid">
+        <article class="articulo-completo">
+            <header class="articulo-header">
+                <span id="categoria-detalle" class="etiqueta-cat"></span>
+                <h1 id="titulo-detalle">Cargando...</h1>
+                <div class="meta-info">
+                    <span id="fecha-detalle"></span>
+                    <span id="autor-detalle"></span>
+                </div>
+            </header>
+
+            <img id="img-detalle" src="" alt="" class="articulo-img-principal">
+
+            <div id="contenido-detalle" class="articulo-texto"></div>
             
-            <article class="blog-card">
-                <div class="blog-img">
-                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=600&auto=format&fit=crop" alt="Audífonos Sony">
-                </div>
-                <div class="blog-content">
-                    <span class="blog-fecha"><i class="fa-regular fa-calendar"></i> 10 Ene, 2026</span>
-                    <h3>Sony WH-1000XM5: ¿El rey del silencio?</h3>
-                    <p>Probamos los nuevos audífonos de Sony con cancelación de ruido. ¿Valen realmente la pena por su precio?</p>
-                    
-                    <a href="detalle-blog.html?id=1" class="btn-leer-mas">Leer análisis completo <i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-            </article>
+            <div class="articulo-cta">
+                <h3>¿Te interesó este producto?</h3>
+                <a href="producto.html" class="btn-comprar-articulo">Ver en la tienda <i class="fa-solid fa-cart-shopping"></i></a>
+            </div>
 
-            <article class="blog-card">
-                <div class="blog-img">
-                    <img src="https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?q=80&w=600&auto=format&fit=crop" alt="Samsung S24">
-                </div>
-                <div class="blog-content">
-                    <span class="blog-fecha"><i class="fa-regular fa-calendar"></i> 05 Ene, 2026</span>
-                    <h3>Samsung Galaxy S24 Ultra: Potencia Pura</h3>
-                    <p>Analizamos la cámara de 200MP y el rendimiento en juegos del nuevo buque insignia de Samsung.</p>
-                    
-                    <a href="detalle-blog.html?id=2" class="btn-leer-mas">Leer análisis completo <i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-            </article>
-
-            <article class="blog-card">
-                <div class="blog-img">
-                    <img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=600&auto=format&fit=crop" alt="Monitor Gamer">
-                </div>
-                <div class="blog-content">
-                    <span class="blog-fecha"><i class="fa-regular fa-calendar"></i> 28 Dic, 2025</span>
-                    <h3>Monitores Curvos vs Planos</h3>
-                    <p>¿Cuál es mejor para trabajar y cuál para jugar? Comparamos las ventajas y desventajas.</p>
-                    
-                    <a href="detalle-blog.html?id=3" class="btn-leer-mas">Leer análisis completo <i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-            </article>
-
-        </div>
+        </article>
     </main>
 
     <footer class="footer-completo">
@@ -134,6 +112,8 @@
             </div>
         </div>
     </footer>
+
+    <script src="../js/datos_blog.js"></script>
 
 </body>
 </html>
